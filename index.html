@@ -68,18 +68,16 @@
     justify-content:center;
     position:relative;
     overflow:hidden;
-    padding-top:90px;      /* nav height */
-    padding-bottom:110px;  /* stat strip height */
+    padding-top:90px;
+    padding-bottom:110px;
     background:
       radial-gradient(ellipse at 60% 0%,rgba(107,26,26,0.2) 0%,transparent 55%),
       radial-gradient(ellipse at 0% 100%,rgba(201,168,76,0.05) 0%,transparent 50%),
       linear-gradient(180deg,#0e0f10 0%,#1a1c1e 50%,#141618 100%);
   }
-  /* Steel plate texture lines */
   #hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,0.013) 80px);pointer-events:none;}
   #hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.008) 80px);pointer-events:none;}
 
-  /* Hero center content — sits in the padded flex middle */
   .hero-content{
     position:relative;
     z-index:15;
@@ -90,12 +88,10 @@
     gap:0;
   }
 
-  /* Road strip — purely decorative, behind everything */
   .road-strip{position:absolute;bottom:110px;left:0;right:0;height:80px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));z-index:2;pointer-events:none;}
   .road-marks{position:absolute;bottom:118px;left:0;right:0;height:5px;pointer-events:none;z-index:2;}
   .road-marks::before{content:'';display:block;height:5px;width:100%;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 60px,transparent 60px,transparent 100px);opacity:0.28;}
 
-  /* Truck animation — decorative layer behind the hero text */
   .truck-scene{position:absolute;bottom:118px;width:100%;z-index:3;pointer-events:none;}
   .truck-wrapper{position:absolute;display:flex;align-items:flex-end;animation:truckDrive 2.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;}
   @keyframes truckDrive{
@@ -103,7 +99,6 @@
     100%{left:calc(100% + 80px);}
   }
 
-  /* Main title — always centered, never moved */
   .hero-title-block{
     position:relative;
     z-index:15;
@@ -129,7 +124,6 @@
   .hero-title-main:nth-child(2){animation-delay:0.5s;}
   .hero-title-main:nth-child(3){animation-delay:0.7s;}
 
-  /* Weld underline */
   .hero-weld-line{
     width:0;height:4px;
     background:linear-gradient(90deg,var(--maroon),var(--gold),var(--maroon));
@@ -146,7 +140,7 @@
   .hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(0.9rem,2vw,1.15rem);font-weight:300;letter-spacing:0.28em;text-transform:uppercase;color:var(--steel-light);}
   .hero-sub strong{color:var(--gold);font-weight:600;}
 
-  /* ── STAT STRIP ── fixed to bottom of hero viewport */
+  /* ── STAT STRIP ── */
   .stat-strip{
     position:absolute;
     bottom:0;left:0;right:0;
@@ -193,8 +187,69 @@
   .tag.grey{background:rgba(138,155,168,0.08);border-color:rgba(138,155,168,0.2);color:var(--steel-light);}
 
   /* ── WHY US ── */
-  #why{background:linear-gradient(160deg,#1a1c1e 0%,#141618 100%);}
-  #why::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--maroon),var(--gold-light),transparent);opacity:0.3;}
+  #why{
+    position:relative;
+    background:
+      linear-gradient(160deg,rgba(26,28,30,0.93) 0%,rgba(20,22,24,0.88) 100%);
+  }
+
+  /* Background image layers for #why */
+  #why .why-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  /* Main welding/steel image — left half */
+  #why .why-bg-img1{
+    position:absolute;
+    top:0;left:0;
+    width:55%;height:100%;
+    background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center center;
+    mask-image:linear-gradient(to right,rgba(0,0,0,0.8) 0%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,0.8) 0%,transparent 100%);
+  }
+  /* Secondary industrial texture — right half */
+  #why .why-bg-img2{
+    position:absolute;
+    top:0;right:0;
+    width:55%;height:100%;
+    background-image:url('./assets/hero3.png');
+    background-size:cover;
+    background-position:center center;
+    mask-image:linear-gradient(to left,rgba(0,0,0,0.7) 0%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to left,rgba(0,0,0,0.7) 0%,transparent 100%);
+  }
+  /* Tyre close-up accent strip — bottom edge */
+  #why .why-bg-img3{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:180px;
+    background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center 60%;
+    opacity:0.07;
+    mask-image:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 100%);
+  }
+  /* Dark overlay to keep legibility */
+  #why .why-bg-overlay{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(ellipse at 70% 40%,rgba(107,26,26,0.08) 0%,transparent 60%),
+      radial-gradient(ellipse at 20% 80%,rgba(201,168,76,0.04) 0%,transparent 50%);
+  }
+
+  /* Separator line — keep original */
+  #why::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--maroon),var(--gold-light),transparent);opacity:0.3;z-index:1;}
+
+  /* Everything inside #why must sit above the bg layers */
+  #why .container{position:relative;z-index:2;}
+
   .why-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;margin-top:1rem;}
   .why-list{display:flex;flex-direction:column;gap:1.2rem;margin-top:2.5rem;}
   .why-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 1.4rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:4px;backdrop-filter:blur(12px);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);cursor:default;}
@@ -262,6 +317,8 @@
     .nav-links{display:none;}
     .hamburger{display:flex;}
     nav{padding:1rem 1.5rem;}
+    #why .why-bg-img1{width:100%;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,transparent 100%);}
+    #why .why-bg-img2{display:none;}
   }
 </style>
 </head>
@@ -329,7 +386,7 @@
   <div class="road-strip"></div>
   <div class="road-marks"></div>
 
-  <!-- Truck passes through — purely decorative, z-index 3, does NOT carry the title -->
+  <!-- Truck passes through — purely decorative -->
   <div class="truck-scene">
     <div class="truck-wrapper">
       <svg width="320" height="90" viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
@@ -367,7 +424,7 @@
     </div>
   </div>
 
-  <!-- ── CENTERED HERO CONTENT (always visible, never overlapped) ── -->
+  <!-- ── CENTERED HERO CONTENT ── -->
   <div class="hero-content">
     <div class="hero-title-block">
       <span class="hero-title-main">MOKERONG</span>
@@ -376,10 +433,6 @@
     </div>
 
     <div class="hero-weld-line"></div>
-
-    <!--<p class="hero-sub subtitle-reveal" style="margin-top:0.2rem;">
-      <strong>Fabrication</strong> &nbsp;·&nbsp; <strong>Tyre Management</strong> &nbsp;·&nbsp; <strong>Equipment Supply</strong>
-    </p>-->
 
     <div class="cta-reveal btn-row" style="margin-top:2rem;">
       <a href="services.html" class="btn-solid">Our Services ›</a>
@@ -411,7 +464,6 @@
 <!-- SERVICES -->
 <section id="services">
 
-  <!-- Corner shape top-left -->
   <svg class="shape-corner-tl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none;position:absolute;top:0;left:0;opacity:0.15;z-index:0;">
     <polyline points="0,120 0,0 120,0" fill="none" stroke="#c9a84c" stroke-width="2"/>
     <polyline points="20,120 20,20 120,20" fill="none" stroke="#6b1a1a" stroke-width="1"/>
@@ -492,6 +544,15 @@
 
 <!-- WHY US -->
 <section id="why">
+
+  <!-- Background image layers -->
+  <div class="why-bg">
+    <div class="why-bg-img1"></div>
+    <div class="why-bg-img2"></div>
+    <div class="why-bg-img3"></div>
+    <!--<div class="why-bg-overlay"></div>-->
+  </div>
+
   <div class="container">
     <div class="why-grid">
       <div>
@@ -526,13 +587,11 @@
       <!-- Animated gear visual -->
       <div class="gear-visual reveal-right">
         <div class="gear-ring r1" style="position:absolute;">
-          <!-- Teeth on outer ring -->
           <svg style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:16px;height:16px;" viewBox="0 0 16 16"><rect x="2" y="0" width="12" height="16" rx="2" fill="rgba(201,168,76,0.4)"/></svg>
         </div>
         <div class="gear-ring r2" style="position:absolute;"></div>
         <div class="gear-ring r3" style="position:absolute;"></div>
 
-        <!-- Gear ticks on r1 -->
         <svg style="position:absolute;width:300px;height:300px;animation:spin 28s linear infinite;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
           <g fill="rgba(201,168,76,0.5)">
             <rect x="140" y="0" width="20" height="18" rx="2"/>
@@ -554,7 +613,6 @@
           </svg>
         </div>
 
-        <!-- Floating labels -->
         <div class="gear-label" style="top:10%;right:0%;">FABRICATION</div>
         <div class="gear-label" style="bottom:12%;left:0%;">TYRE SYS.</div>
         <div class="gear-label" style="bottom:30%;right:5%;">SUPPLY</div>
@@ -565,7 +623,6 @@
 
 <!-- CTA STRIP -->
 <section id="cta-strip">
-  <!-- Corner shape bottom-right -->
   <svg style="position:absolute;bottom:0;right:0;width:160px;height:160px;opacity:0.12;pointer-events:none;" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
     <polyline points="160,0 160,160 0,160" fill="none" stroke="#c9a84c" stroke-width="2"/>
     <polyline points="140,0 140,140 0,140" fill="none" stroke="#6b1a1a" stroke-width="1"/>
@@ -621,19 +678,14 @@
 </footer>
 
 <script>
-  /* NAV scroll */
   const nav=document.getElementById('mainNav');
   window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
 
-  /* Truck passes through as decoration */
-
-  /* Reveal on scroll */
   const io=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
 
-  /* Hamburger (basic) */
   const ham=document.querySelector('.hamburger');
   ham&&ham.addEventListener('click',()=>{
     const links=document.querySelector('.nav-links');

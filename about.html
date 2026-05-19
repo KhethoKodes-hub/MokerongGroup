@@ -113,7 +113,7 @@
   .who-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;margin-top:3rem;}
 
   /* Live oscilloscope animation - THE UNIQUE ENGINEERING ELEMENT */
-  .oscilloscope-wrap{position:relative;border:1px solid rgba(107,26,26,0.4);background:rgba(5,15,5,0.7);padding:0.5rem;backdrop-filter:blur(10px);}
+  .oscilloscope-wrap{position:relative;border:1px solid rgba(107,26,26,0.4);background:rgba(5,15,5,0.7);backdrop-filter:blur(10px);padding:0.5rem;}
   .oscilloscope-wrap::before{content:'STRUCTURAL LOAD MONITOR';position:absolute;top:-10px;left:16px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);background:var(--dark);padding:0 6px;}
   .oscilloscope-wrap::after{content:'● LIVE';position:absolute;top:-10px;right:16px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:#4dff6e;background:var(--dark);padding:0 6px;animation:blink 1.2s step-end infinite;}
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
@@ -375,10 +375,11 @@
 <div class="bead-divider"></div>
 
 <!-- ═══════════════ WHO WE ARE ═══════════════ -->
-<section id="who">
-  <div class="bracket-tl"></div>
-  <div class="bracket-br"></div>
-  <div class="container">
+<section id="who" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 0;"></div>
+  <div class="bracket-tl" style="z-index: 2;"></div>
+  <div class="bracket-br" style="z-index: 2;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div class="who-grid">
       <div class="who-text reveal-left">
         <div class="section-eyebrow">Who We Are</div>
@@ -441,8 +442,9 @@
 <div class="bead-divider"></div>
 
 <!-- ═══════════════ SERVICES BLUEPRINT ═══════════════ -->
-<section id="blueprint">
-  <div class="container">
+<section id="blueprint" style="background-image: url('.'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 0;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div style="text-align:center;" class="reveal">
       <div class="section-eyebrow" style="justify-content:center;">What We Deliver</div>
       <h2 class="section-h">The Engineering <em>Ecosystem</em></h2>
@@ -544,8 +546,9 @@
 <div class="bead-divider"></div>
 
 <!-- ═══════════════ PROCESS TRACK ═══════════════ -->
-<section id="process">
-  <div class="container">
+<section id="process" style="background-image: url('./assets/civil2.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 0;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div style="text-align:center;" class="reveal">
       <div class="section-eyebrow" style="justify-content:center;">How We Work</div>
       <h2 class="section-h">The <em>Execution</em> <span>Protocol</span></h2>
@@ -610,8 +613,9 @@
 <div class="bead-divider"></div>
 
 <!-- ═══════════════ VALUES ═══════════════ -->
-<section id="values">
-  <div class="container">
+<section id="values" style="background-image: url('https://images.unsplash.com/photo-1581092335871-670d71400e44?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 0;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div style="text-align:center;margin-bottom:0;" class="reveal">
       <div class="section-eyebrow" style="justify-content:center;">What Drives Us</div>
       <h2 class="section-h">Core <em>Values</em> — <span>The Backbone</span></h2>
@@ -672,8 +676,9 @@
 <div class="bead-divider"></div>
 
 <!-- ═══════════════ COMMITMENT / QUOTE ═══════════════ -->
-<section id="commitment">
-  <div class="container">
+<section id="commitment" style="background-image: url('./assets/hydraulicfittings2.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 0;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div class="commit-inner reveal">
       <div class="section-eyebrow" style="justify-content:center;">Our Promise</div>
       <h2 class="section-h" style="margin-bottom:2.5rem;">Beyond <em>Steel</em></h2>
