@@ -22,9 +22,9 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);o
 ::-webkit-scrollbar-track{background:var(--dark);}
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--maroon),var(--gold));border-radius:4px;}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(20,18,16,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:transparent;backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all 0.3s ease;}
+  nav.scrolled{background:rgba(20,18,16,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0.8rem 3rem;}.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
 .logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));border:1px solid var(--maroon-mid);display:flex;align-items:center;justify-content:center;transform:rotate(45deg);flex-shrink:0;transition:transform 0.4s;}
 .logo:hover .logo-mark{transform:rotate(0deg);}
 .logo-mark span{transform:rotate(-45deg);display:block;font-size:0.9rem;color:var(--gold);}
@@ -271,17 +271,15 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="logo">
-    <div class="logo-mark"><span>M</span></div>
-    MOKERONG
+<nav id="mainNav">
+  <a href="#" class="logo" style="display: flex; align-items: center; gap: 1rem;">
+    <img src="assets/giflogo.gif" alt="Mokerone Engineering Logo" style="width: 80px; height: auto; display: block;">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html" >About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="#" class="active nav-cta">Contact Us</a></li>
+    <li><a href="contact.html" class="nav-cta" class="active">Contact Us</a></li>
   </ul>
 </nav>
 
@@ -322,7 +320,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
     <div class="weld-line"></div>
     <p class="hero-p">Your machine is down. Your project needs steel.<br><strong>We answer in under 2 hours.</strong> 24/7. No exceptions.</p>
 
-    <!-- Live dispatch status bar -->
+    <!-- Live dispatch status bar 
     <div class="dispatch-bar reveal" style="max-width:680px;margin-left:auto;margin-right:auto;">
       <div class="dispatch-live">
         <span class="live-dot"></span>
@@ -347,7 +345,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
       <div class="dispatch-stat">
         <span class="dispatch-stat-n">120<span style="font-size:0.9rem;">km</span></span>
         <span class="dispatch-stat-l">Radius Active</span>
-      </div>
+      </div>-->
     </div>
   </div>
 </section>
@@ -531,7 +529,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 <section id="locations" style="position:relative;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;" class="reveal">
-      <div style="font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--maroon-mid);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem;justify-content:center;"><span style="color:var(--gold);font-weight:700;">//</span>Service Coverage</div>
+      <!--<div style="font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--maroon-mid);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem;justify-content:center;"><span style="color:var(--gold);font-weight:700; color:">//</span >Service Coverage</div>-->
       <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,4rem);color:var(--white);">Where We <em style="color:var(--gold);">Deploy</em></h2>
       <p style="color:rgba(248,244,239,0.4);font-size:0.94rem;margin-top:0.6rem;">Main yard + satellite depots across South Africa's industrial heartland</p>
     </div>
@@ -544,19 +542,19 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
         <svg class="loc-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="location-card reveal d2">
-        <div class="loc-tag">// Satellite Depot</div>
+        <div class="loc-tag" style="color:#fff">// Satellite Depot</div>
         <div class="loc-name">Cape Town</div>
         <div class="loc-detail">Western Cape<br>Construction &amp; marine<br>industrial servicing</div>
         <svg class="loc-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="1"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="location-card reveal d3">
-        <div class="loc-tag">// Satellite Depot</div>
+        <div class="loc-tag" style="color:#fff">// Satellite Depot</div>
         <div class="loc-name">Durban</div>
         <div class="loc-detail">KwaZulu-Natal<br>Port &amp; harbour industrial<br>equipment servicing</div>
         <svg class="loc-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="1"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="location-card reveal d4">
-        <div class="loc-tag">// Satellite Depot</div>
+        <div class="loc-tag" style="color:#fff">// Satellite Depot</div>
         <div class="loc-name">Polokwane</div>
         <div class="loc-detail">Limpopo<br>Mining &amp; bushveld<br>field operations base</div>
         <svg class="loc-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="1"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -603,7 +601,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 <section id="certs" style="position:relative;">
   <div style="max-width:1200px;margin:0 auto;text-align:center;">
     <div class="reveal">
-      <div style="font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--maroon-mid);display:flex;align-items:center;gap:0.7rem;justify-content:center;margin-bottom:0.8rem;"><span style="color:var(--gold);">//</span>Trust &amp; Credentials</div>
+      <!--div style="font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--maroon-mid);display:flex;align-items:center;gap:0.7rem;justify-content:center;margin-bottom:0.8rem;"><span style="color:var(--gold);">//</span>Trust &amp; Credentials</div>-->
       <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);">Why You Can <em style="color:var(--gold);">Trust</em> Mokerong</h2>
     </div>
     <div class="certs-row">
@@ -695,10 +693,11 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 </footer>
 
 <script>
-/* NAV */
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.background=window.scrollY>60?'rgba(20,18,16,0.97)':'rgba(20,18,16,0.88)';
-});
+  /* ── NAV scroll ── */
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>60);
+  });
 
 /* REVEAL */
 const io=new IntersectionObserver(entries=>{

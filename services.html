@@ -22,9 +22,10 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);o
 ::-webkit-scrollbar-track{background:var(--dark);}
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--maroon),var(--gold));border-radius:4px;}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(20,18,16,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:transparent;backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all 0.3s ease;}
+  nav.scrolled{background:rgba(20,18,16,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0.8rem 3rem;}.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
 .logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));border:1px solid var(--maroon-mid);display:flex;align-items:center;justify-content:center;transform:rotate(45deg);flex-shrink:0;transition:transform 0.4s;}
 .logo:hover .logo-mark{transform:rotate(0deg);}
 .logo-mark span{transform:rotate(-45deg);display:block;font-size:0.9rem;color:var(--gold);}
@@ -220,15 +221,14 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="logo">
-    <div class="logo-mark"><span>M</span></div>
-    MOKERONG
+<nav id="mainNav">
+  <a href="#" class="logo" style="display: flex; align-items: center; gap: 1rem;">
+    <img src="assets/giflogo.gif" alt="Mokerone Engineering Logo" style="width: 80px; height: auto; display: block;">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#" class="active">Services</a></li>
+    <li><a href="about.html" >About</a></li>
+    <li><a href="services.html"class="active">Services</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
 </nav>
@@ -298,16 +298,16 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
         <div class="svc-img-grid"></div>
         <div class="svc-img-bracket-tl"></div>
         <div class="svc-img-bracket-br"></div>
-        <div class="svc-img-badge-top"><span>AWS D1.1 · ISO 3834</span></div>
+        <!--<div class="svc-img-badge-top"><span>AWS D1.1 · ISO 3834</span></div>-->
         <div class="svc-img-badge-bot">
-          <span class="live-dot-sm"></span>
-          <span>CERTIFIED WELDERS ON SITE</span>
+          <!--<span class="live-dot-sm"></span>
+          <span>CERTIFIED WELDERS ON SITE</span>-->
         </div>
-        <div class="svc-img-caption">// STRUCTURAL WELD — FIELD DEPLOYMENT</div>
+        <!--<div class="svc-img-caption">// STRUCTURAL WELD — FIELD DEPLOYMENT</div>-->
       </div>
       <!-- Content -->
       <div class="svc-content reveal-right">
-        <div class="section-eyebrow">Service 01</div>
+        <div class="section-eyebrow" style="color: #fff;">Service 01</div>
         <h2 class="section-h">Fabrication &amp;<br><em>On-Site Welding</em></h2>
         <div class="svc-tag-row">
           <span class="svc-tag red">SMAW</span><span class="svc-tag red">GMAW</span><span class="svc-tag red">FCAW</span>
@@ -364,15 +364,15 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
         <div class="svc-img-grid"></div>
         <div class="svc-img-bracket-tl"></div>
         <div class="svc-img-bracket-br"></div>
-        <div class="svc-img-badge-top"><span>TPMS · THERMAL ANALYTICS</span></div>
+        <!--<div class="svc-img-badge-top"><span>TPMS · THERMAL ANALYTICS</span></div>-->
         <div class="svc-img-badge-bot">
-          <span class="live-dot-sm"></span>
-          <span>FLEET MONITORING ACTIVE</span>
+          <!--<span class="live-dot-sm"></span>
+          <span>FLEET MONITORING ACTIVE</span>-->
         </div>
-        <div class="svc-img-caption">// OTR TYRE MANAGEMENT — ACTIVE FLEET</div>
+        <!--<div class="svc-img-caption">// OTR TYRE MANAGEMENT — ACTIVE FLEET</div>-->
       </div>
       <div class="svc-content reveal-left">
-        <div class="section-eyebrow">Service 02</div>
+        <div class="section-eyebrow" style="color: #fff;">Service 02</div>
         <h2 class="section-h">Tyre Management<br>&amp; <em>Protection</em></h2>
         <div class="svc-tag-row">
           <span class="svc-tag red">OTR Tyres</span><span class="svc-tag red">Mining Fleet</span>
@@ -429,15 +429,15 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
         <div class="svc-img-grid"></div>
         <div class="svc-img-bracket-tl"></div>
         <div class="svc-img-bracket-br"></div>
-        <div class="svc-img-badge-top"><span>OEM COMPLIANCE · RAPID DELIVERY</span></div>
+        <!--<div class="svc-img-badge-top"><span>OEM COMPLIANCE · RAPID DELIVERY</span></div>-->
         <div class="svc-img-badge-bot">
-          <span class="live-dot-sm"></span>
-          <span>STOCK LEVELS: OPERATIONAL</span>
+          <!--<span class="live-dot-sm"></span>
+          <span>STOCK LEVELS: OPERATIONAL</span>-->
         </div>
-        <div class="svc-img-caption">// INDUSTRIAL COMPONENTS — LOGISTICS</div>
+        <!--<div class="svc-img-caption">// INDUSTRIAL COMPONENTS — LOGISTICS</div>-->
       </div>
       <div class="svc-content reveal-right">
-        <div class="section-eyebrow">Service 03</div>
+        <div class="section-eyebrow"style="color: #fff">Service 03</div>
         <h2 class="section-h">Equipment &amp;<br><em>System Suppliers</em></h2>
         <div class="svc-tag-row">
           <span class="svc-tag red">Hydraulics</span><span class="svc-tag red">Pumps</span>
@@ -494,15 +494,15 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
         <div class="svc-img-grid"></div>
         <div class="svc-img-bracket-tl"></div>
         <div class="svc-img-bracket-br"></div>
-        <div class="svc-img-badge-top"><span>EPC · CIVIL · STEELWORKS</span></div>
+        <!--<div class="svc-img-badge-top"><span>EPC · CIVIL · STEELWORKS</span></div>-->
         <div class="svc-img-badge-bot">
-          <span class="live-dot-sm"></span>
-          <span>PROJECT STATUS: ACTIVE</span>
+          <!--<span class="live-dot-sm"></span>
+          <span>PROJECT STATUS: ACTIVE</span>-->
         </div>
-        <div class="svc-img-caption">// TURNKEY PROJECT — SITE ACTIVE</div>
+        <!--<div class="svc-img-caption">// TURNKEY PROJECT — SITE ACTIVE</div>-->
       </div>
       <div class="svc-content reveal-left">
-        <div class="section-eyebrow">Service 04</div>
+        <div class="section-eyebrow" style="color: #fff;">Service 04</div>
         <h2 class="section-h">Turnkey Solutions<br>&amp; <em>Civil Works</em></h2>
         <div class="svc-tag-row">
           <span class="svc-tag red">EPC Projects</span><span class="svc-tag red">Civil Construction</span>
@@ -551,7 +551,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 <section id="mini-services">
   <div class="container">
     <div style="text-align:center;" class="reveal">
-      <div class="section-eyebrow" style="justify-content:center;">Additional Capabilities</div>
+      <div class="section-eyebrow" style="justify-content:center; color: #fff">Additional Capabilities</div>
       <h2 class="section-h">More From <em>The Field</em></h2>
     </div>
     <div class="mini-grid">
@@ -593,7 +593,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 <section id="process" style="padding:5rem 1.5rem;">
   <div class="container">
     <div style="text-align:center;" class="reveal">
-      <div class="section-eyebrow" style="justify-content:center;">How We Work</div>
+      <div class="section-eyebrow" style="justify-content:center; color:#fff">How We Work</div>
       <h2 class="section-h">Service <em>Delivery</em> <span>Protocol</span></h2>
       <p style="color:rgba(248,244,239,0.4);font-size:0.94rem;margin-top:0.8rem;">From first call to final handover — a precision-engineered workflow.</p>
     </div>
@@ -652,7 +652,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
     <circle cx="160" cy="160" r="6" fill="#c9a84c"/>
   </svg>
   <div class="cta-inner reveal">
-    <div class="section-eyebrow" style="justify-content:center;">Ready to Start</div>
+    <div class="section-eyebrow" style="justify-content:center; color:#fff">Ready to Start</div>
     <h2 class="cta-h">Need an Engineering<br><span style="color:var(--gold);">Solution?</span></h2>
     <p class="cta-p">Our teams deliver rapid field support, precision fabrication, equipment sourcing, and turnkey execution — tailored to your operational challenge.</p>
     <div class="btn-row">
@@ -701,10 +701,11 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
 </footer>
 
 <script>
-/* NAV */
-const nav=document.querySelector('nav');
-window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>60?'rgba(20,18,16,0.97)':'rgba(20,18,16,0.88)';});
-
+  /* ── NAV scroll ── */
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>60);
+  });
 /* REVEAL */
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
