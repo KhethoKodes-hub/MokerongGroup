@@ -37,6 +37,22 @@ body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);o
 .nav-cta{background:var(--maroon) !important;color:var(--white) !important;padding:0.5rem 1.4rem;border:1px solid var(--maroon-mid);font-weight:700 !important;transition:all 0.3s !important;}
 .nav-cta::after{display:none !important;}
 .nav-cta:hover{background:var(--maroon-mid) !important;}
+
+/* When nav is scrolled (has white background), change nav links to black */
+nav.scrolled .nav-links a {
+  color: black;
+}
+nav.scrolled .nav-links a:hover {
+  color: var(--maroon);
+}
+/* Ensure active link and CTA button text remains white when scrolled (overrides black) */
+nav.scrolled .nav-links a.active {
+  color: var(--gold-light);
+}
+nav.scrolled .nav-links .nav-cta {
+  color: white !important;
+}
+
 @media(max-width:768px){.nav-links{display:none;}nav{padding:1rem 1.5rem;}}
 
 /* ── HERO ── */
@@ -398,7 +414,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html" >About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html" class="nav-cta" class="active">Contact Us</a></li>
+    <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
   </ul>
 
   <div class="theme-toggle-wrap">
@@ -438,7 +454,7 @@ footer{background:#0c0b0a;border-top:1px solid rgba(255,255,255,0.06);padding:4r
   </svg>
 
   <div style="position:relative;z-index:5;padding:0 1.5rem;">
-    <div class="hero-eyebrow">ENGINEERING COMMUNICATIONS HUB</div>
+    <!--<div class="hero-eyebrow">ENGINEERING COMMUNICATIONS HUB</div>-->
     <span class="hero-h">DEPLOY</span>
     <span class="hero-h-gold">OUR TEAM</span>
     <div class="weld-line"></div>

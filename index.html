@@ -43,7 +43,7 @@
   .logo:hover .logo-mark{transform:rotate(0deg);}
   .logo-mark span{transform:rotate(-45deg);display:block;font-size:0.9rem;color:var(--gold);}
   .nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center;}
-  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:black;text-decoration:none;position:relative;transition:color 0.3s;}
+  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:white;text-decoration:none;position:relative;transition:color 0.3s;}
   .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s;}
   .nav-links a:hover{color:var(--white);}
   .nav-links a:hover::after{width:100%;}
@@ -52,6 +52,18 @@
   .nav-cta:hover{background:var(--maroon-mid) !important;box-shadow:0 0 24px var(--maroon-glow);}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
   .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+
+  /* When nav is scrolled (has white background), change nav links to black */
+  nav.scrolled .nav-links a {
+    color: black;
+  }
+  nav.scrolled .nav-links a:hover {
+    color: var(--maroon);
+  }
+  /* Ensure the CTA button text remains white even when scrolled (overrides black) */
+  nav.scrolled .nav-links .nav-cta {
+    color: white !important;
+  }
 
   /* ── DECORATIVE SHAPES ── */
   .shape-left{position:absolute;left:-60px;top:50%;transform:translateY(-50%);width:220px;height:220px;pointer-events:none;z-index:0;opacity:0.08;}
