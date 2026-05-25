@@ -36,12 +36,12 @@
 
   /* ── NAV ── */
   nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:transparent;backdrop-filter:blur(0px);border-bottom:1px solid transparent;transition:all 0.3s ease;}
-  nav.scrolled{background:rgba(20,18,16,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0.8rem 3rem;}  .logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+  nav.scrolled{background:white;backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0.8rem 3rem;}  .logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
   .logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));border:1px solid var(--maroon-mid);display:flex;align-items:center;justify-content:center;transform:rotate(45deg);flex-shrink:0;transition:transform 0.4s;}
   .logo:hover .logo-mark{transform:rotate(0deg);}
   .logo-mark span{transform:rotate(-45deg);display:block;font-size:0.9rem;color:var(--gold);}
   .nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center;}
-  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(248,244,239,0.55);text-decoration:none;position:relative;transition:color 0.3s;}
+  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:black;text-decoration:none;position:relative;transition:color 0.3s;}
   .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s;}
   .nav-links a:hover,.nav-links a.active{color:var(--white);}
   .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
@@ -388,7 +388,7 @@
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#" class="logo" style="display: flex; align-items: center; gap: 1rem;">
-    <img src="assets/giflogo.gif" alt="Mokerone Engineering Logo" style="width: 80px; height: auto; display: block;">
+    <img src="assets/MokerongLogo2.png" alt="Mokerone Engineering Logo" style="width: 80px; height: auto; display: block;">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
